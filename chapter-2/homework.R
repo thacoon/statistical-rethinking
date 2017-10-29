@@ -157,7 +157,7 @@ posterior[1]
 
 # without birth information
 species.1.likelihood <- .8
-species.2.likelihood <- 1 - .65
+species.2.likelihood <- .65
 likelihood <- c(species.1.likelihood, species.2.likelihood)
 prior <- c(1, 1)
 unstandardized.posterior <- likelihood * prior
