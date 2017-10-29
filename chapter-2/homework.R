@@ -72,7 +72,7 @@ prior <- rep(x = 1, length = length(likelihood))
 unstandardized.posterior <- prior * likelihood
 posterior <- unstandardized.posterior / sum(unstandardized.posterior)
 
-# the probability the other size is black is equal to the probability that we've drawn card 1
+# the probability the other side is black is equal to the probability that we've drawn card 1
 posterior[1] == 2/3
 
 ## 2M5
@@ -85,7 +85,7 @@ prior <- rep(x = 1, length = length(likelihood))
 unstandardized.posterior <- prior * likelihood
 posterior <- unstandardized.posterior / sum(unstandardized.posterior)
 
-# the probability the other size is black is equal to the probability that we've drawn card 1 or 4
+# the probability the other side is black is equal to the probability that we've drawn card 1 or 4
 posterior[1] + posterior[4]
 
 ## 2M6
@@ -97,22 +97,10 @@ prior <- c(1, 2, 3)
 unstandardized.posterior <- prior * likelihood
 posterior <- unstandardized.posterior / sum(unstandardized.posterior)
 
-# the probability the other size is black is equal to the probability that we've drawn card 1
+# the probability the other side is black is equal to the probability that we've drawn card 1
 posterior[1] == .5
 
 ## 2M7
-card.1.likelihood <- 2
-card.2.likelihood <- 1
-card.3.likelihood <- 0
-likelihood <- c(card.1.likelihood, card.2.likelihood, card.3.likelihood)
-prior <- c(1, 2, 3)
-unstandardized.posterior <- prior * likelihood
-posterior <- unstandardized.posterior / sum(unstandardized.posterior)
-
-# the probability the other size is black is equal to the probability that we've drawn card 1
-posterior[1] == .5
-
-## 2M8
 card.1.2.likelihood <- 2
 card.2.1.likelihood <- 0
 card.1.3.likelihood <- 4
@@ -188,5 +176,5 @@ posterior.birth.info <- unstandardized.posterior / sum(unstandardized.posterior)
 
 # probability pandas is from species 1, given veterinarian test and birth information
 composite.unstandardized.posterior <- posterior.vet.test * posterior.birth.info
-composite.posterior <- composite.unstandardized.posterior / sum(composite.posterior)
+composite.posterior <- composite.unstandardized.posterior / sum(composite.unstandardized.posterior)
 composite.posterior[1]
